@@ -15,9 +15,31 @@
 #logging:
 #  level:
 #    root: debug
+logging:
+  level:
+    root: info
+
 cache.config:
   expired: ${APISIX_CONF_EXPIRE_TIME}
   capacity: 1000
 
 socket:
   file: ${APISIX_LISTEN_ADDRESS}
+
+spring:
+  redis:
+    #    host: redis.dev.svc.cluster.local
+    host: 10.0.36.176
+    #    port: 6379
+    port: 32000
+    timeout: 120000
+    lettuce:
+      pool:
+        max-active: 1000
+        max-wait: 30000ms
+        min-idle: 20
+        max-idle: 100
+jwt:
+  secret: abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890
+  issuer: Bizseer
+  expiration: 86400

@@ -59,7 +59,7 @@
         <compiler.version>11</compiler.version>
         <netty.version>4.1.54.Final</netty.version>
         <guava.version>30.1.1-jre</guava.version>
-        <spring-boot.version>2.4.5</spring-boot.version>
+        <spring-boot.version>2.6.2</spring-boot.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     </properties>
 
@@ -88,6 +88,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-json</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -96,6 +107,10 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -120,9 +135,9 @@
                 <version>3.1.0</version>
                 <configuration>
                     <skip>false</skip>
-                    <configLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/checkstyle.xml</configLocation>
-                    <suppressionsLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
-                    <headerLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/HEADER</headerLocation>
+<!--                    <configLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/checkstyle.xml</configLocation>-->
+<!--                    <suppressionsLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/checkstyle-suppressions.xml</suppressionsLocation>-->
+<!--                    <headerLocation>${maven.multiModuleProjectDirectory}/src/main/checkstyle/HEADER</headerLocation>-->
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>

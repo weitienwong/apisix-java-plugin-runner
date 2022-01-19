@@ -80,6 +80,7 @@ public class HttpRequest implements A6Request {
      * @return the source ip
      */
     public String getSourceIP() {
+
         if (Objects.isNull(sourceIP)) {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < req.srcIpLength(); i++) {
